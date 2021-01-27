@@ -22,7 +22,7 @@
 #### Content: user prompt, slices, sorting, loops
 
 ## 5. Makejson: map -> JSON
-- prompt to user "name" and "adress" values
+- user prompt "name" and "adress" values
 - create a map with "name" and "address" keys
 - Convert map to JSON (Marshalling)
 #### Topics: user prompt, maps, JSON, Marshalling
