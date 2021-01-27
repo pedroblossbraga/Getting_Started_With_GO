@@ -1,5 +1,7 @@
 # Getting Started with Go
 ![https://miro.medium.com/max/700/1*Ifpd_HtDiK9u6h68SZgNuA.png](gopher.png)
+(https://miro.medium.com/max/700/1*Ifpd_HtDiK9u6h68SZgNuA.png)
+
 
 ## 1. Hello Go!
 - Hello World in Go
