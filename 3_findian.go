@@ -1,3 +1,15 @@
+/*
+===============================
+findian.go
+Given a string, checks if:
+- starts with the letter "i"
+- has a letter "a"
+- ends with the letter "n"
+
+author: Pedro Blöss Braga
+22/01/2021
+===============================
+*/
 package main
 
 import (
@@ -7,159 +19,91 @@ import (
 	"strings"
 )
 
-/*
-func startsWithI(s string) bool {
-	var i string = "i"
-	//s_ := strings.Replace(s, " ", "", -1)
-	x := strings.ToLower(string(s[0]))
-	fmt.Printf("startswithI: (x: %s, i: %s)", x, i)
-	return x == i
-}
-*/
-func startsWithI(s []string) bool {
-	var i string = "i"
-	fmt.Printf("\n====================================\n")
-	//s_ := strings.Replace(s, " ", "", -1)
-	x := strings.ToLower(string(s[0]))
-	fmt.Printf("startswithI: (x: %s, i: %s)\n", x, i)
-	fmt.Printf("\n====================================\n")
-	return x == i
-}
-
-/*
-func endsWithN(s string) bool {
-	var n string = "n"
-	//s_ := string(strings.Replace(s, " ", "", -1))
-
-		fmt.Printf("\n====================================\n")
-		fmt.Printf("lenght of s: %d", len(s))
-		for i := 0; i < len(s)-2; {
-			fmt.Printf("(i: %d, char: %s)\n", i, string(s[i]))
-			i++
-		}
-		fmt.Printf("\n====================================\n")
-
-	s_low := strings.ToLower(s)
-	ind := strings.LastIndex(s_low, "n")
-	fmt.Printf("lenght of s: %d\n", len(s))
-	fmt.Printf("last index of n: %d\n", ind)
-	x := string(s[ind])
-	//x := strings.ToLower(string(s[len(s)-1:]))
-	fmt.Printf("endswithn (x: %s, n: %s) \n ", x, n)
-	return x == n
-}
-*/
-func endsWithN(s []string) bool {
-	var n string = "n"
-	//s_ := string(strings.Replace(s, " ", "", -1))
+func removeSpaces(s string, verbose bool) ([]string, int) {
 	/*
-		fmt.Printf("\n====================================\n")
-		fmt.Printf("lenght of s: %d", len(s))
-		for i := 0; i < len(s)-2; {
-			fmt.Printf("(i: %d, char: %s)\n", i, string(s[i]))
-			i++
-		}
-		fmt.Printf("\n====================================\n")
+		Receives a string, and loops through its characters,
+		and stores the nonempty values in slice,
+		counts quantity of nonletters.
 	*/
-	fmt.Printf("\n====================================\nendsWithN\n")
-	//s_low := strings.ToLower(s[len(s)-1])
-	//ind := strings.LastIndex(s_low, "n")
-	fmt.Printf("lenght of s: %d\n", len(s))
-	//fmt.Printf("last index of n: %d\n", ind)
-	x := strings.ToLower(string(s[len(s)-1]))
-	//x := strings.ToLower(string(s[len(s)-1:]))
-	fmt.Printf("endswithn (x: %s, n: %s) \n ", x, n)
-	fmt.Println(x == n)
-	fmt.Printf("\n====================================\n")
-	return x == n
-}
-
-/*
-func findLastCharacter(s string) string {
-	for i := 0; i < len(s); i++ {
-
-	}
-}
-*/
-/*
-func hasA(s string) bool {
-	var a string = "a"
-	x := strings.ToLower(s)
-	fmt.Printf("hasA (%s %s)\n", string(x), a)
-	return strings.Contains(x, a)
-}
-*/
-func hasA(s []string) bool {
-	var a string = "a"
-	fmt.Printf("\n====================================\n")
-	x := strings.ToLower(strings.Join(s, ""))
-	fmt.Printf("hasA (%s %s)\n", string(x), a)
-	fmt.Printf("\n====================================\n")
-	return strings.Contains(x, a)
-}
-func removeSpaces(s string) ([]string, int) {
 	N := len(s)
-	fmt.Println(N)
+	if verbose == true {
+		fmt.Println(N)
+	}
 	var s_ []string
 	var qtd int
 	for i := 0; i < N; i++ {
 
 		if string(s[i]) != " " && string(s[i]) != "\n" {
-			fmt.Printf("(%s %d)\n", string(s[i]), i)
+			if verbose == true {
+				fmt.Printf("(%s %d)\n", string(s[i]), i)
+			}
 			s_ = append(s_, string(s[i]))
 		} else {
 			qtd++
 		}
 	}
-	fmt.Printf("\nqtd:%d\n", qtd)
+	if verbose == true {
+		fmt.Printf("\nquantity of whitespaces or separators:%d\n", qtd)
+	}
 	return s_, qtd
 }
 
-func main() {
-	var s_input string
-
-	fmt.Printf("Please enter a string and press ENTER.\n")
-
-	//num, err := fmt.Scan(&s)
-	//var num string
-
-	in := bufio.NewReader(os.Stdin)
-	s_input, err := in.ReadString('\n')
-
-	//scanner := bufio.NewScanner(os.Stdin)
-	//scanner.Scan()
-	//s := scanner.Text()
-
-	if err == nil {
-
-		fmt.Printf("SCANNED s: %s \n", s_input)
-
-		//s_ := string(strings.ReplaceAll(string(s), " ", ""))
-		//s_, qtd := removeSpaces(strings.ReplaceAll(s_input, "\n", ""))
-		s, qtd := removeSpaces(strings.ReplaceAll(s_input, "\n", ""))
-		//s_ := string(s_nospace[:len(s_nospace)-qtd])
-
-		//fmt.Printf("replaced s: %s \n", s_[:len(s_)-qtd])
-
-		//s := s_[:len(s_)-qtd]
-		fmt.Printf("replaced s: %s \n", s[:len(s)-qtd])
-
-		if startsWithI(s) && endsWithN(s) && hasA(s) {
-			fmt.Printf("Found!!\n")
-		} else {
-
-			fmt.Printf("\n====================================\n")
-			fmt.Printf("\n====================================\n")
-			fmt.Printf("\n====================================\n")
-			fmt.Printf("Not Found!!\n")
-			fmt.Println("startsWithI: ", startsWithI(s))
-			fmt.Println("endsWithN(s): ", endsWithN(s))
-			fmt.Println("hasA(s): ", hasA(s))
-		}
-
-	} else {
-		//fmt.Printf("num: %d\n", num)
-		fmt.Printf("error: %s\n", err)
+func startsWithI(s []string, verbose bool) bool {
+	var i string = "i"
+	x := strings.ToLower(string(s[0]))
+	if verbose == true {
+		fmt.Printf("startswithI: (x: %s, i: %s), result: %t\n", x, i, x == i)
 	}
+	return x == i
+}
+func endsWithN(s []string, verbose bool) bool {
+	var n string = "n"
 
+	x := strings.ToLower(string(s[len(s)-1]))
+	if verbose == true {
+		fmt.Printf("lenght of s: %d\n", len(s))
+		fmt.Printf("endswithn (x: %s, n: %s) result: %t\n ", x, n, x == n)
+	}
+	return x == n
+}
+func hasA(s []string, verbose bool) bool {
+	var a string = "a"
+	x := strings.ToLower(strings.Join(s, "")) // transform slice into string, to compare
+	if verbose == true {
+		fmt.Printf("hasA (%s %s) resultado: %t\n", string(x), a, strings.Contains(x, a))
+	}
+	return strings.Contains(x, a)
+}
+
+func main() {
+	const verbose = false // change the verbosity of the program
+
+	// scanning for user input of strings (whitespaces allowed)
+	fmt.Printf("Please enter a string and press ENTER.\n")
+	scanner := bufio.NewScanner(os.Stdin)
+	if scanner.Scan() {
+		x := scanner.Text()
+		fmt.Printf("Input was: %q\n", x)
+
+		// starts checking
+		fmt.Printf("\n\n============== removing spaces =======================\n\n")
+		x_slice, qtd := removeSpaces(string(x), verbose) //string => slice of letters (whitespaces removed)
+		if verbose == true {
+			fmt.Printf("quantity of non letters: %d\n", qtd)
+			fmt.Printf("s: %s\n", x_slice)
+		}
+		fmt.Printf("================= check - starts with I ====================\n\n")
+		startsWithI(x_slice, true)
+		fmt.Printf("================= check - ends with N ====================\n\n")
+		endsWithN(x_slice, true)
+		fmt.Printf("================== check - has A ===================\n\n")
+		hasA(x_slice, true)
+		fmt.Printf("=====================================\n\n")
+
+		if startsWithI(x_slice, verbose) && endsWithN(x_slice, verbose) && hasA(x_slice, verbose) {
+			fmt.Printf("\nFound!!\n")
+		} else {
+			fmt.Printf("\nNot Found.\n")
+		}
+	}
 }
