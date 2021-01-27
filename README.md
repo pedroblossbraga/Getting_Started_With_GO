@@ -44,10 +44,9 @@
 - In Python, lists and arrays have variable lenght, but arrays support vector operations, and lists support string-like operations (concatenation, multiplication)
 
 - Go slice
+
                 package main
-
                 import "fmt"
-
                 func main() {
                     s1 := []int{1,2,3}
                     s2 := []int{4,5,6}
