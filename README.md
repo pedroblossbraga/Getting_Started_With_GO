@@ -35,6 +35,34 @@
 
 #### Topics: .txt file reading, structs, slices, functions, loops
 
+### From Python to Go
+#### Maps vs Dictionaries (Python)
+- Go Maps are similar to Python dictionaries: a bijection object wih a association {key : value}
+
+#### Slices/arrays vs lists/arrays
+- In Go, slices are variable lenght sequences, and arrays have fixed lenght
+- In Python, lists and arrays have variable lenght, but arrays support vector operations, and lists support string-like operations (concatenation, multiplication)
+
+- Go slice
+                package main
+
+                import "fmt"
+
+                func main() {
+                    s1 := []int{1,2,3}
+                    s2 := []int{4,5,6}
+                    fmt.Println(append(s1,s2...))
+                }
+                /// [1 2 3 4 5 6]
+
+
+- Python list
+                >>>[1,2,3]+[4,5,6] # = [1,2,3,4,5,6]
+                >>>[0]*5 # = [0,0,0,0,0]
+- Python array
+                >>> np.array([1,2,3])+np.array([4,5,6]) # = np.array([1+4, 2+5, 3+6])
+                >>> np.array([1,2,3])*2    # = np.array([1*2,2*2,3*2])
+
 
 ## Coursera link
 - https://www.coursera.org/learn/golang-getting-started
@@ -45,5 +73,5 @@
 ### License
 - MIT
 
-### Contact: Any questions, optimazation? Feel free to send me.
+### Contact: Any questions, optimization? Feel free to send me.
 - https://www.linkedin.com/in/pedro-bl%C3%B6%C3%9F-braga-3263a1136/
