@@ -1,5 +1,5 @@
 # Getting Started with Go
-![](gopher.png)
+![https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2Fwesionary-team%2Fgetting-started-with-golang-ad1e9c8121ab&psig=AOvVaw0mGko2F2-EsrrK7DMpfV68&ust=1611840470676000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCNj7tvWivO4CFQAAAAAdAAAAABAD](gopher.png)
 
 ## 1. Hello Go!
 - Hello World in Go
