@@ -35,9 +35,10 @@
 
 #### Topics: .txt file reading, structs, slices, functions, loops
 
+
 ### From Python to Go
 #### Maps vs Dictionaries (Python)
-- Go Maps are similar to Python dictionaries: a bijection object wih a association {key : value}
+- Go Maps are similar to Python dictionaries: a bijection object wiyh a association {key : value}
 
 #### Slices/arrays vs lists/arrays
 - In Go, slices are variable lenght sequences, and arrays have fixed lenght
