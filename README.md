@@ -41,8 +41,8 @@
 - Go Maps are similar to Python dictionaries: a bijection object wiyh a association {key : value}
 
 #### Slices/arrays vs lists/arrays
-- In Go, slices are variable lenght sequences, and arrays have fixed lenght
-- In Python, lists and arrays have variable lenght, but arrays support vector operations, and lists support string-like operations (concatenation, multiplication)
+- In Go, slices are variable length sequences, and arrays have fixed length
+- In Python, lists and arrays have variable length, but arrays support vector operations, and lists support string-like operations (concatenation, multiplication)
 
 - Go slice
 
