@@ -23,9 +23,9 @@ Your program will successively read each line of the text file and
  and print the first and last names found in each struct.
 
 -------------------------------
-- Example of file "names.txt":
+- Example of file "names.txt": (fictional names!)
 Joseph Silva
-	Andrew Souza
+Andrew Souza
 Richard Andrade
 Pedro Blöss
 Pitagoras Wilson
