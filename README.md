@@ -42,7 +42,7 @@
 ![](py_to_go.png)
 (https://www.google.com/url?sa=i&url=https%3A%2F%2Ftowardsdatascience.com%2Fmoving-to-go-from-python-9ebbd9a8aec4&psig=AOvVaw2N1l1u4Tj-SEL-Q1Ztj7ST&ust=1611859456819000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMie9sjivO4CFQAAAAAdAAAAABAD)
 #### Maps vs Dictionaries (Python)
-- Go Maps are similar to Python dictionaries: a bijection object wiyh a association {key : value}
+- Go Maps are similar to Python dictionaries: a bijection object with a association {key : value}
 
 #### Slices/arrays vs lists/arrays
 - In Go, slices are variable length sequences, and arrays have fixed length
